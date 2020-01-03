@@ -20,15 +20,15 @@
   "homepage": "https://github.com/zaubermaerchen/imas_cg_cartoon_costar#readme",
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.6.0",
-    "parcel-bundler": "^1.12.3",
-    "typescript": "^3.5.2",
-    "vue-template-compiler": "^2.6.10"
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.7.4",
+    "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
-    "chart.js": "^2.8.0",
-    "vue": "^2.6.10",
-    "vue-chartjs": "^3.4.2",
-    "vue-hot-reload-api": "^2.3.3",
+    "chart.js": "^2.9.3",
+    "vue": "^2.6.11",
+    "vue-chartjs": "^3.5.0",
+    "vue-hot-reload-api": "^2.3.4",
     "vue-select": "^2.6.4"
   }
 }
