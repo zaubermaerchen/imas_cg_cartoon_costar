@@ -1,31 +1,16 @@
-<template>
-    <section>
-        <idolselect v-bind:name="name" v-on:change="change"></idolselect>
-        <chart v-if="name" v-bind:name="name"></chart>
-    </section>
-</template>
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import IdolSelector from '@/components/IdolSelector.vue';
+import CostarChart from './components/CostarChart.vue';
 
-
-<script lang="ts">
-    import idolselect from './components/select.vue';
-    import chart from './components/chart.vue';
-
-    export default {
-        components: {
-            "idolselect": idolselect,
-            "chart": chart,
-        },
-        data: function () {
-            const parameters: URLSearchParams = new URLSearchParams(window.location.search);
-            const name: string = parameters.has("name") ? decodeURIComponent(parameters.get("name").replace(/\+/g, " ")) : null;
-            return {
-                name: name
-            };
-        },
-        methods: {
-            change: function(name: string): void {
-                this.name = name;
-            }
-        }
-    }
+const name = ref('');
+onMounted(() => {
+  const parameters: URLSearchParams = new URLSearchParams(window.location.search);
+  name.value = parameters.get('name') ?? ''
+})
 </script>
+
+<template>
+  <IdolSelector v-model="name" />
+  <CostarChart v-if="name" :name="name" />
+</template>

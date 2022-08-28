@@ -1,7 +1,7 @@
-import Vue from 'vue';
-import App from './app.vue';
+import { createApp } from 'vue'
+import vSelect from 'vue-select'
+import App from '@/App.vue'
 
-new Vue({
-    el: "#app",
-    render: h => h(App)
-});
+const app = createApp(App)
+app.use(vSelect)
+app.mount('#app')
