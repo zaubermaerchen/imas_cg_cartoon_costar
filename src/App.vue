@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
 import IdolSelector from '@/components/IdolSelector.vue'
+import CostarTable from './components/CostarTable.vue'
 import CostarChart from './components/CostarChart.vue'
 import { getCartoonCostar } from '@/functions/api'
 
@@ -22,5 +23,23 @@ watch(name, () => void loadData())
 
 <template>
   <IdolSelector v-model="name" />
-  <CostarChart v-if="name" :data="data" />
+
+  <section v-if="name">
+    <CostarTable class="table" :data="data" />
+    <CostarChart class="chart" :data="data" />
+  </section>
 </template>
+
+<style scoped>
+  section {
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+  }
+  .table {
+    flex: 1;
+  }
+  .chart {
+    flex: 2;
+  }
+</style>
