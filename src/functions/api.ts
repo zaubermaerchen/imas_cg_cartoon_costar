@@ -1,16 +1,16 @@
 async function getApiResponse<T>(path: string, params?: URLSearchParams): Promise<T> {
-  const url = new URL(`${import.meta.env.VITE_API_SERVER_URL}${path}`)
+  const url = new URL(path, import.meta.env.VITE_API_SERVER_URL)
   if (params !== undefined) {
     url.search = params.toString()
   }
 
   const response = await fetch(url.href, {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "Accept": "application/json",
+      'Accept': 'application/json',
     },
-    mode: "cors",
-    credentials: "omit",
+    mode: 'cors',
+    credentials: 'omit',
   })
 
   return await response.json()

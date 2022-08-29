@@ -10,16 +10,16 @@ interface Props {
 interface Emits {
   (e: 'update:modelValue', value: string): void
 }
-const props = defineProps<Props>();
+const props = defineProps<Props>()
 const emits = defineEmits<Emits>()
 
 const name = computed({
   get: () => props.modelValue,
   set: (value) => emits('update:modelValue', value),
-});
+})
 
 
-const nameList = ref<string[]>([]);
+const nameList = ref<string[]>([])
 const loadCharacterNameList = async() => {
   const response = await getCharacterNameList()
   nameList.value = response.names

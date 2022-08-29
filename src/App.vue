@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import IdolSelector from '@/components/IdolSelector.vue';
-import CostarChart from './components/CostarChart.vue';
+import { ref, onMounted } from 'vue'
+import IdolSelector from '@/components/IdolSelector.vue'
+import CostarChart from './components/CostarChart.vue'
 
-const name = ref('');
+const name = ref('')
 onMounted(() => {
-  const parameters: URLSearchParams = new URLSearchParams(window.location.search);
+  const parameters: URLSearchParams = new URLSearchParams(window.location.search)
   name.value = parameters.get('name') ?? ''
 })
 </script>

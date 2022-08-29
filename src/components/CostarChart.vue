@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import {ref, computed, toRefs, onMounted, watch } from 'vue';
+import {ref, computed, toRefs, onMounted, watch } from 'vue'
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, ChartOptions } from 'chart.js'
-import { getCartoonCostar } from '@/functions/api';
+import { getCartoonCostar } from '@/functions/api'
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 interface Props {
   name: string
 }
-const props = defineProps<Props>();
-const { name } = toRefs(props);
+const props = defineProps<Props>()
+const { name } = toRefs(props)
 
-const response = ref<Api.GetCartoonCostarResponse | null>(null);
+const response = ref<Api.GetCartoonCostarResponse | null>(null)
 const loadData = async() => {
   response.value = await getCartoonCostar(name.value)
 }
@@ -35,7 +35,7 @@ const data = computed(() => {
   if (response.value === null) {
     return null
   }
-  const results = Array.from(response.value);
+  const results = Array.from(response.value)
 
   results.sort((a, b) => b.count - a.count)
 
