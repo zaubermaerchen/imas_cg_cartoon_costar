@@ -25,7 +25,7 @@ const options: ChartOptions = {
   },
 }
 const dataSet = computed(() => {
-  const data = props.data?.slice(0, 50) ?? []
+  const data = props.data?.slice(0, 25) ?? []
   const labels: string[] = []
   const values: number[] = []
   for (const value of data) {
