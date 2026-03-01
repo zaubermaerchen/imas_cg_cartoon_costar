@@ -1,13 +1,13 @@
 async function getApiResponse<T>(path: string, params?: URLSearchParams): Promise<T> {
-  const url = new URL(path, import.meta.env.VITE_API_SERVER_URL)
+  let url = `${import.meta.env.VITE_API_SERVER_URL}${path}`
   if (params !== undefined) {
-    url.search = params.toString()
+    url += `?${params?.toString() ?? ''}`
   }
 
-  const response = await fetch(url.href, {
+  const response = await fetch(url, {
     method: 'GET',
     headers: {
-      'Accept': 'application/json',
+      Accept: 'application/json',
     },
     mode: 'cors',
     credentials: 'omit',
@@ -17,7 +17,7 @@ async function getApiResponse<T>(path: string, params?: URLSearchParams): Promis
 }
 
 export async function getCartoonCostar(name: string): Promise<Api.GetCartoonCostarResponse> {
-  return await getApiResponse(`cartoon/costar/${name}`)
+  return await getApiResponse(`cartoon/costar/${name}/`)
 }
 
 export async function getCharacterNameList(): Promise<Api.IdolNameListResponse> {

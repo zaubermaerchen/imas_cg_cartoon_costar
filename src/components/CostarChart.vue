@@ -1,7 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, ChartOptions } from 'chart.js'
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  type ChartOptions,
+} from 'chart.js'
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
@@ -10,7 +19,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const options: ChartOptions = {
+const options: ChartOptions<'bar'> = {
   indexAxis: 'y',
   responsive: true,
   maintainAspectRatio: true,
@@ -40,7 +49,7 @@ const dataSet = computed(() => {
         label: '共演回数',
         data: values,
       },
-    ]
+    ],
   }
 })
 </script>
