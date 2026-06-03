@@ -26,7 +26,7 @@
   "homepage": "https://github.com/zaubermaerchen/imas_cg_cartoon_costar#readme",
   "dependencies": {
     "chart.js": "^3.9.1",
-    "vue": "^3.5.34",
+    "vue": "^3.5.35",
     "vue-chartjs": "^4.1.2",
     "vue-select": "4.0.0-beta.6"
   },
@@ -36,13 +36,13 @@
     "@types/jsdom": "^28.0.3",
     "@types/node": "^24.12.4",
     "@vitejs/plugin-vue": "^6.0.7",
-    "@vitest/browser-playwright": "^4.1.7",
-    "@vitest/eslint-plugin": "^1.6.17",
+    "@vitest/browser-playwright": "^4.1.8",
+    "@vitest/eslint-plugin": "^1.6.19",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.7.0",
     "@vue/test-utils": "^2.4.10",
     "@vue/tsconfig": "^0.8.1",
-    "eslint": "^10.4.0",
+    "eslint": "^10.4.1",
     "eslint-plugin-oxlint": "~1.56.0",
     "eslint-plugin-vue": "~10.8.0",
     "jiti": "^2.7.0",
@@ -51,10 +51,10 @@
     "oxlint": "~1.56.0",
     "prettier": "3.8.1",
     "typescript": "~5.9.3",
-    "vite": "^8.0.14",
+    "vite": "^8.0.16",
     "vite-plugin-vue-devtools": "^8.1.2",
-    "vitest": "^4.1.7",
+    "vitest": "^4.1.8",
     "vitest-browser-vue": "^2.1.0",
-    "vue-tsc": "^3.3.1"
+    "vue-tsc": "^3.3.3"
   }
 }
