@@ -3,5 +3,3 @@ onlyBuiltDependencies:
 minimumReleaseAge: 1440
 allowBuilds:
   esbuild: true
-overrides:
-  js-beautify: "^2.0.0"
