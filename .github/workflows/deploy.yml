@@ -16,7 +16,7 @@ jobs:
       name: production
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
       - name: Create .env.production.local
         run: echo "${{ secrets.DOTENV }}" > .env.production.local
       - name: Install Node.js
@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build
-        run: npm run build
+        run: pnpm build
       - name: Upload build files
         uses: appleboy/scp-action@v1
         with:
