@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@prettier/plugin-oxc": "^0.0.4",
+    "esbuild": "^0.28.1",
     "@tsconfig/node24": "^24.0.4",
     "@types/jsdom": "^28.0.3",
     "@types/node": "^24.12.4",
